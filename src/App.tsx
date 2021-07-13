@@ -4,21 +4,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>React에서 팝업 사용하기</h1>
+      <h2>popup-opener 커뮤니케이션</h2>
+      <ul>
+        <li>dom에 접근</li>
+        <li>setState</li>
+        <li>action</li>
+        <li>context</li>
+        <li>window</li>
+        <li>message</li>
+        <li>localStorage</li>
+        <li>observe</li>
+      </ul>
     </div>
   );
 }
