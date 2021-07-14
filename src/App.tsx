@@ -9,7 +9,9 @@ import Popup2 from './popup/Popup2';
 import WindowObject from './parent/WindowObject';
 import Popup3 from './popup/Popup3';
 import PostMessage from './parent/PostMessage';
-import Popup4 from './popup/Popup4'
+import Popup4 from './popup/Popup4';
+import LocalStorageComp from './parent/LocalStorageComp';
+import Popup5 from './popup/Popup5';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/popup3" component={Popup3}/>
           <Route path="/parent4" component={PostMessage}/>
           <Route path="/popup4" component={Popup4}/>
+          <Route path="/parent5" component={LocalStorageComp}/>
+          <Route path="/popup5" component={Popup5}/>
         </Switch>
       </BrowserRouter>
     </div>
