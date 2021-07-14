@@ -1,22 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import DomControl from './parent/DomControl';
+import Popup1 from './popup/Popup1';
+import Main from './Main';
 
 function App() {
   return (
     <div className="container">
-      <h1>React에서 팝업 사용하기</h1>
-      <h2>popup-opener 커뮤니케이션</h2>
-      <ul>
-        <li>dom에 접근</li>
-        <li>setState</li>
-        <li>action</li>
-        <li>context</li>
-        <li>window</li>
-        <li>message</li>
-        <li>localStorage</li>
-        <li>observe</li>
-      </ul>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Main} exact/>
+          <Route path="/parent1" component={DomControl}/>
+          <Route path="/popup1" component={Popup1}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
