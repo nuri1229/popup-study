@@ -1,4 +1,4 @@
-import React, {useRef, useState, useLayoutEffect} from 'react';
+import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 
 function DomControl () {
 
@@ -9,22 +9,25 @@ function DomControl () {
     popupRef.current = window.open('/popup1', 'popup1', 'width=300,height=300,right=0,top=0');
   }
 
-  const increasePopupData = () => {
+  const increase = () => {
+    setNum(num + 1);
+  }
+
+  useEffect(() => {
     if (popupRef.current) {
       const $span = popupRef.current.document.querySelector('#fromOpenerReceivedData');
       if($span && $span.innerHTML) {
-        $span.innerHTML = `${Number($span?.innerHTML) + 1}`;
+        $span.innerHTML = `${num}`;
       }
-      
     }
-  }
+  }, [num]);
 
   return (
     <div>
       <div>
         <button onClick={openPopup}>팝업열기</button> 
         <br/>
-        <button onClick={increasePopupData}>팝업 조작하기</button>
+        <button onClick={increase}>increase</button>
       </div>
       <div>
         <span id="fromPopupReceivedData">{num}</span><br/>

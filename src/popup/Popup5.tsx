@@ -5,7 +5,8 @@ const origin = "http://localhost:3001";
 function Popup5 () {
 
   const [num, setNum] = useState<number>(0);
-  const sendToOpener = () => {
+
+  const increase = () => {
     setNum(num + 1);
   }
 
@@ -27,7 +28,7 @@ function Popup5 () {
       <span id="fromOpenerReceivedData">{num}</span>
       <span>현재 스테이트: {num}</span>
       <br/>
-      <button onClick={sendToOpener}>state 넘기기</button>
+      <button onClick={increase}>increase</button>
     </>
   )
 }

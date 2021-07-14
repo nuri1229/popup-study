@@ -9,7 +9,7 @@ function Popup2 () {
   const dispatch = useDispatch();
   const [num, setNum] = useState<number>(counter);
 
-  const sendToOpener = () => {
+  const increase = () => {
     dispatch(setCounterAction(counter + 1));
   }
 
@@ -22,7 +22,7 @@ function Popup2 () {
       <span id="fromOpenerReceivedData">{num}</span>
       <span>현재 스테이트: {num}</span>
       <br/>
-      <button onClick={sendToOpener}>state 넘기기</button>
+      <button onClick={increase}>increase</button>
     </>
   )
 }

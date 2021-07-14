@@ -14,7 +14,7 @@ function WindowObject () {
     }
   }
 
-  const increasePopupData = () => {
+  const increase = () => {
     setNum(num + 1);
   }
 
@@ -29,7 +29,7 @@ function WindowObject () {
       <div>
         <button onClick={openPopup}>팝업열기</button> 
         <br/>
-        <button onClick={increasePopupData}>팝업 조작하기</button>
+        <button onClick={increase}>팝업 조작하기</button>
       </div>
       <div>
         <span id="fromPopupReceivedData">{num}</span><br/>

@@ -9,7 +9,7 @@ function LocalStorageComp () {
     popupRef.current = window.open('/popup5', 'popup5', 'width=300,height=300,right=0,top=0');
   }
 
-  const increasePopupData = () => {
+  const increase = () => {
     setNum(num + 1);
   }
 
@@ -30,7 +30,7 @@ function LocalStorageComp () {
       <div>
         <button onClick={openPopup}>팝업열기</button> 
         <br/>
-        <button onClick={increasePopupData}>팝업 조작하기</button>
+        <button onClick={increase}>increase</button>
       </div>
       <div>
         <span id="fromPopupReceivedData">{num}</span><br/>
