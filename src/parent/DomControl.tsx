@@ -19,17 +19,19 @@ function DomControl () {
     }
   }
 
-  return <div style={{width:'50%'}}>
+  return (
     <div>
-      <button onClick={openPopup}>팝업열기</button> 
-      <br/>
-      <button onClick={increasePopupData}>팝업 조작하기</button>
+      <div>
+        <button onClick={openPopup}>팝업열기</button> 
+        <br/>
+        <button onClick={increasePopupData}>팝업 조작하기</button>
+      </div>
+      <div>
+        <span id="fromPopupReceivedData">{num}</span><br/>
+        현재 스테이트: {num}
+      </div>
     </div>
-    <div>
-      <span id="fromPopupReceivedData">{num}</span><br/>
-      현재 스테이트: {num}
-    </div>
-  </div>
+  )
 }
 
 export default DomControl;
