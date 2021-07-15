@@ -26,6 +26,20 @@ useEffect(() => {
 #### 문제점 
 * 돔의 innerHTML을 변경시켜 보여지는 값을 변경 시키기 가능하나 스테이트에 접근할 수 없음
 * 스테이트에 따라 렌더링을 하는 리액트의 동작 방식에 어울리지 않음
+* 팝업 오픈과 함꼐 팝업의 돔에 직접 접근할 때에는 CSR 특성상 렌더링 시간에 대한 딜레이가 필요
+```tsx
+/* fad */
+  const popup = window.open('/join/documents/popup', 'imagePopup', `width=${width},height=${height},scrollbars=1`);
+  if (popup) {
+    const interval = setInterval(() => { // 인터벌로 렌더링 체크
+      const doc = popup.document.getElementById('wrap_popup_image');
+      if (doc) {
+        clearInterval(interval); //인터벌 제거
+        doc.appendChild(img); // 로직
+      }
+    }, 100);
+
+```
 ---
 
 ### 2. Redux
